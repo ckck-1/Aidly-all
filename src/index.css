@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 4%;
+
+    --primary: 0 85% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 97%;
+    --secondary-foreground: 240 5% 30%;
+
+    --muted: 240 6% 97%;
+    --muted-foreground: 240 4% 46%;
+
+    --accent: 240 6% 97%;
+    --accent-foreground: 240 5% 30%;
+
+    --destructive: 0 85% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 0 85% 56%;
+
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 85% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 56%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 0 85% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  .aidly-gradient {
+    @apply bg-gradient-to-r from-[#FF4B4B] to-[#1A1A1A] text-white;
+  }
+
+  .aidly-gradient-text {
+    @apply bg-gradient-to-r from-[#FF4B4B] to-[#1A1A1A] bg-clip-text text-transparent;
+  }
+
+  .aidly-card {
+    @apply bg-white rounded-2xl shadow-md p-4;
+  }
+}
+
+/* Animate the voice waveform */
+.waveform-bar {
+  @apply bg-aidly-red rounded-full w-1 mx-0.5 transform origin-bottom;
+  animation: wave 1.2s infinite;
+  animation-delay: calc(var(--bar-index) * 0.1s);
+}
+
+/* AIDLY Custom Classes */
+.aidly-gradient {
+  background: linear-gradient(135deg, #FF4B4B 0%, #1A1A1A 100%);
+}
+
+.aidly-gradient-text {
+  background: linear-gradient(135deg, #FF4B4B 0%, #1A1A1A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom Colors */
+:root {
+  --aidly-red: #FF4B4B;
+  --aidly-red-light: #FF6B6B;
+  --aidly-black: #1A1A1A;
+  --aidly-darkgray: #4A4A4A;
+  --aidly-lightgray: #F5F5F5;
+}
