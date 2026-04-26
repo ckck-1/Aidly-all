@@ -8,6 +8,7 @@ interface HealthRecommendation {
   message: string;
 }
 
+
 interface HealthInsight {
   type: string;
   value: string;
